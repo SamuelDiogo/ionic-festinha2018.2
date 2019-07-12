@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>perfil-evento</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list *ngIf="evento | async as events">
+    <ion-item>
+      <ion-text>
+        {{events.nome}}
+      </ion-text>
+    </ion-item>
+
+    <ion-item>
+      <ion-text>
+        {{events.tema}}
+      </ion-text>
+    </ion-item>
+
+    <ion-item>
+      <ion-note> {{key}}</ion-note>
+    </ion-item>
+
+  </ion-list>
+</ion-content>

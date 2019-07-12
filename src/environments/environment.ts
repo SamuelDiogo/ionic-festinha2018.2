@@ -4,16 +4,17 @@
 
 export const environment = {
   production: false,
-  firebaseConfig: {
-    apiKey: "AIzaSyDthqX6Yp9Sx3Hcm5kSt2-t0TFOSQwuM7A",
-    authDomain: "ionic-festinhas.firebaseapp.com",
-    databaseURL: "https://ionic-festinhas.firebaseio.com",
-    projectId: "ionic-festinhas",
-    storageBucket: "",
-    messagingSenderId: "769837439161",
-    appId: "1:769837439161:web:a11a14ba286668fd"
+   firebaseConfig : {
+    apiKey: "AIzaSyDq4PcfezDgASzpJhE0dyzaFzwTXmCyQMY",
+  authDomain: "ionic-senac-festinhas2018.firebaseapp.com",
+  databaseURL: "https://ionic-senac-festinhas2018.firebaseio.com",
+  projectId: "ionic-senac-festinhas2018",
+  storageBucket: "ionic-senac-festinhas2018.appspot.com",
+  messagingSenderId: "1026899925353",
+  appId: "1:1026899925353:web:95f57f377c0e9e93"
   }
 };
+
 
 /*
  * For easier debugging in development mode, you can import the following file
