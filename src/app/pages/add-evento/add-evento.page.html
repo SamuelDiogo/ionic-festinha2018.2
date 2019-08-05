@@ -14,20 +14,24 @@
       <ion-label position="floating">Tema</ion-label>
       <ion-input type="tema" name="tema" [(ngModel)]= "evento.tema"  #t="ngModel" required></ion-input>
     </ion-item>
+
     <ion-item>
       <ion-label position="floating">Data</ion-label>
-      <ion-input type="data" name="data" [(ngModel)]= "evento.data" #d="ngModel" required></ion-input>
-    </ion-item> 
-    <ion-item>
-      <ion-label position="floating">Horario</ion-label>
-      <ion-input type="horario" name="horario" [(ngModel)]="evento.horario" #h="ngModel" required></ion-input>
+      <ion-datetime   type="data" name="data" [(ngModel)]= "evento.data" #d="ngModel" required displayFormat="DD/MM/YYYY" min="2019-07-14" max="2050-31-12" value="2002-09-23T15:03:46.789"></ion-datetime>
     </ion-item>
+
+    <ion-item>
+      <ion-label>Horario</ion-label>
+      <ion-datetime  displayFormat="HH:mm"></ion-datetime>
+    </ion-item>
+
     <ion-item>
       <ion-label position="floating">Local</ion-label>
       <ion-input type="local" name="local" [(ngModel)]="evento.local" #l="ngModel" required></ion-input>
     </ion-item>
+    
     <ion-item lines="none"></ion-item>
-      <ion-button type="submit" >Salvar</ion-button>
+      <ion-button type="submit" (click)= "showLoading()">Salvar</ion-button>
       <ion-button routerLink="/" (click)="fc.clear()">Cancelar</ion-button>
 
   </form>

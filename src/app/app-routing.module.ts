@@ -2,8 +2,10 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  { path: '', loadChildren: './tabs/tabs.module#TabsPageModule' },
-  { path: 'perfil-usuario', loadChildren: './pages/perfil-usuario/perfil-usuario.module#PerfilUsuarioPageModule' },
+  { path: '', loadChildren: './tabs/tabs.module#TabsPageModule' },  { path: 'login-usuario', loadChildren: './pages/login-usuario/login-usuario.module#LoginUsuarioPageModule' },
+  { path: 'maps', loadChildren: './pages/maps/maps.module#MapsPageModule' },
+
+  //{ path: 'perfil-usuario', loadChildren: './pages/perfil-usuario/perfil-usuario.module#PerfilUsuarioPageModule' },
   //{ path: 'list-evento', loadChildren: './pages/list-evento/list-evento.module#ListEventoPageModule' },
   //{ path: 'perfil-evento', loadChildren: './pages/perfil-evento/perfil-evento.module#PerfilEventoPageModule' },
 

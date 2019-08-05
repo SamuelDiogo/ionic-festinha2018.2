@@ -9,10 +9,16 @@
     <ion-refresher-content></ion-refresher-content>
   </ion-refresher>
 
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+      <ion-fab-button color="danger" routerLink="/tabs/addEvento">
+        <ion-icon name="add"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+
   <ion-list *ngIf="eventos | async as events">
     <ion-item-sliding *ngFor="let event of events">
       <ion-item-options side="start">
-        <ion-item-option (click)="apagar()" color="danger" expandable>
+        <ion-item-option (click)="remover(event.key)" color="danger" expandable>
           <ion-icon slot="icon-only" name="trash"></ion-icon>
         </ion-item-option>
       </ion-item-options>
@@ -25,18 +31,12 @@
         <ion-note>{{event.key}}</ion-note>
       </ion-item>
 
-      <ion-item-options side="end">
-        <ion-item-option (click)="atualizar()" expandable>
+      <ion-item-options side="end" method atualizar of ListEventoPage>
+        <ion-item-option  routerLink="/tabs/addEvento/{{event.key}}"expandable>
           <ion-icon slot="icon-only" name="create"></ion-icon>
         </ion-item-option>
       </ion-item-options>
     </ion-item-sliding>
-
   </ion-list>
-
-  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-      <ion-fab-button color="danger" routerLink="/tabs/addEvento">
-        <ion-icon name="add"></ion-icon>
-      </ion-fab-button>
-    </ion-fab>
+  
 </ion-content>

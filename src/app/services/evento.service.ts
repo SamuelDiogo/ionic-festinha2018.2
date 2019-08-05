@@ -8,7 +8,8 @@ import { map } from 'rxjs/operators';
 })
 export class EventoService {
 
-  constructor(public db: AngularFireDatabase
+  constructor(
+    public db: AngularFireDatabase
     ) { }
     save(evento: Evento) {
       return this.db.list("evento").push(evento)
@@ -24,5 +25,12 @@ export class EventoService {
     }
     get(key:string){
       return this.db.object<Evento>("evento/"+ key).valueChanges()
+    }
+    update(evento: Evento, key:string){
+      return this.db.object("evento/" + key).update(evento);
+    }
+    
+    remove(key:string){
+      return this.db.object("evento/" + key).remove();
     }
 }

@@ -11,8 +11,10 @@ export class UsuarioService {
     public db: AngularFireDatabase
   ) { }
 
-  save(usuario: Usuario) {
-    return this.db.list("usuario").push(usuario)
+  save(usuario: Usuario, key:string) {
+    //return this.db.list("usuario").push(usuario) INSERE AUTOMATICAMENTE  A KEY
+
+    return this.db.object("usuario/" + key).set(usuario) // PERMITE VOCE INSERIR A KEY
   }
 
   getAll() {
@@ -27,4 +29,11 @@ export class UsuarioService {
     return this.db.object<Usuario>("usuario/"+ key).valueChanges()
   }
 
+update(usuario: Usuario, key:string){
+  return this.db.object("usuario/" + key).update(usuario);
+}
+
+remove(key:string){
+  return this.db.object("usuario/" + key).remove();
+}
 }

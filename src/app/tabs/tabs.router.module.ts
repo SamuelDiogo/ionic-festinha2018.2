@@ -35,6 +35,15 @@ const routes: Routes = [
         ]
       },
       {
+        path: 'addUsuario/:key',
+        children: [
+          {
+            path: '',
+            loadChildren: '../pages/add-usuario/add-usuario.module#AddUsuarioPageModule'
+          }
+        ]
+      },
+      {
         path: 'perfilUsuario/:key'/*:key => cria uma variavel de navegação*/,
         children: [
           {
@@ -54,6 +63,15 @@ const routes: Routes = [
       },
       {
         path: 'addEvento',
+        children: [
+          {
+            path: '',
+            loadChildren: '../pages/add-evento/add-evento.module#AddEventoPageModule'
+          }
+        ]
+      },
+      {
+        path: 'addEvento/:key',
         children: [
           {
             path: '',
